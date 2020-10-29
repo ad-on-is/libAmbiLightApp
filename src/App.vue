@@ -18,6 +18,7 @@
     </section>
 
     <section id="content">
+      <!-- <color-picker v-bind="color" @input="onInput"></color-picker> -->
       <!-- <IconButton />
       <IconButton />
       <IconButton /> -->
@@ -29,15 +30,19 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import IconButton from "./components/IconButton.vue";
 import Tabs from "./components/Tabs.vue";
+// import ColorPicker from "@radial-color-picker/vue-color-picker";
 
 export default {
   name: "App",
   inject: ["lightModel"],
   data() {
     return {
+      color: null,
       initalized: false,
     };
   },
+
+  mounted() {},
   async created() {
     await this.lightModel.init();
     this.initalized = true;
@@ -57,6 +62,7 @@ export default {
     HelloWorld,
     IconButton,
     Tabs,
+    // ColorPicker,
   },
 };
 </script>

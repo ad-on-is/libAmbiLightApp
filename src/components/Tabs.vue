@@ -4,7 +4,6 @@
       class="tab"
       v-for="(light, index) in this.lightModel.getState().lights"
       :key="index"
-      @click="addLight"
     >
       {{ light.name }}
     </button>

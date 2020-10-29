@@ -5,7 +5,6 @@ import App from './App.vue'
 import './index.css'
 import lightModel from './lightModel';
 
-
 const app = createApp(App);
 app.provide('lightModel', lightModel);
 app.mount('#app');
