@@ -9,7 +9,7 @@ class Socket {
   emitter = new MicroEmitter();
   _this = this;
   constructor(ip) {
-    this.ws = new WebSocket("ws://" + ip + "/ws");
+    this.ws = new WebSocket("wss://" + ip + "/ws");
     this.ws.onopen = ((event) => {
       this.connected = true;
       console.log("Connected!");
@@ -57,7 +57,8 @@ class Light {
     this.ip = ip;
     this.name = name;
     this.config = config;
-    this.socket = new Socket(this.ip);
+    // this.socket = new Socket(this.ip);
+    this.socket = new Socket('broker.hivemq.com:8084');
     this.socket.on('done', (data) => {
       this.config = JSON.parse(data);
       console.log(this.config);
