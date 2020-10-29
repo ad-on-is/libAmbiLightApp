@@ -58,7 +58,7 @@ class Light {
     this.name = name;
     this.config = config;
     // this.socket = new Socket(this.ip);
-    this.socket = new Socket('broker.hivemq.com:8084');
+    this.socket = new Socket(this.ip);
     this.socket.on('done', (data) => {
       this.config = JSON.parse(data);
       console.log(this.config);
